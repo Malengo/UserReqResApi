@@ -76,7 +76,7 @@ class LoginViewController: UIViewController {
         }
         
         tarefa.resume()
-        isToken()
+      
         
     }
     /*

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F307D98228034F5200AACB24 /* link.png in Resources */ = {isa = PBXBuildFile; fileRef = F307D98128034F5200AACB24 /* link.png */; };
+		F307D986280350FB00AACB24 /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = F307D985280350FB00AACB24 /* face.png */; };
+		F307D988280351CC00AACB24 /* git.png in Resources */ = {isa = PBXBuildFile; fileRef = F307D987280351CC00AACB24 /* git.png */; };
 		F34E458F2800CBC000F6C9FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E458E2800CBC000F6C9FB /* LoginViewController.swift */; };
 		F34E45912800CEC200F6C9FB /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E45902800CEC200F6C9FB /* LoginUser.swift */; };
 		F34E45932800D06800F6C9FB /* UserApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E45922800D06800F6C9FB /* UserApiData.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F307D98128034F5200AACB24 /* link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link.png; sourceTree = "<group>"; };
+		F307D985280350FB00AACB24 /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = face.png; path = ../../../Downloads/face.png; sourceTree = "<group>"; };
+		F307D987280351CC00AACB24 /* git.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = git.png; sourceTree = "<group>"; };
 		F34E458E2800CBC000F6C9FB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F34E45902800CEC200F6C9FB /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		F34E45922800D06800F6C9FB /* UserApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiData.swift; sourceTree = "<group>"; };
@@ -123,6 +129,9 @@
 				F3EA22D027FE02DB006AC06A /* SceneDelegate.swift */,
 				F3EA22D227FE02DB006AC06A /* ViewController.swift */,
 				F3EA22D427FE02DB006AC06A /* Main.storyboard */,
+				F307D985280350FB00AACB24 /* face.png */,
+				F307D987280351CC00AACB24 /* git.png */,
+				F307D98128034F5200AACB24 /* link.png */,
 				F3EA22DA27FE02DB006AC06A /* Assets.xcassets */,
 				F3EA22DC27FE02DB006AC06A /* LaunchScreen.storyboard */,
 				F3EA22DF27FE02DB006AC06A /* Info.plist */,
@@ -262,8 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3EA22DE27FE02DB006AC06A /* LaunchScreen.storyboard in Resources */,
+				F307D98228034F5200AACB24 /* link.png in Resources */,
 				F3EA22DB27FE02DB006AC06A /* Assets.xcassets in Resources */,
 				F3EA22D627FE02DB006AC06A /* Main.storyboard in Resources */,
+				F307D988280351CC00AACB24 /* git.png in Resources */,
+				F307D986280350FB00AACB24 /* face.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

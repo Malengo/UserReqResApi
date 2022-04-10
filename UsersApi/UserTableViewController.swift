@@ -15,6 +15,7 @@ class UserTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 130
         self.navigationItem.hidesBackButton = navbar
         
         if let url = URL(string: "https://reqres.in/api/users"){
@@ -46,6 +47,9 @@ class UserTableViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Lista de Usuários"
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,10 +65,12 @@ class UserTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellUser", for: indexPath) as! CellTableViewCell
-        
+        cell.imgCell.layer.cornerRadius = 100
+        cell.imgCell.layer.frame.size = CGSize(width: 5, height: 5)
         cell.firstText.text = users[indexPath.row].first_name
         cell.lastText.text = users[indexPath.row].last_name
         cell.emailText.text = users[indexPath.row].email
+        cell.imgCell.image = UIImage(data: NSData(contentsOf: NSURL(string: users[indexPath.row].avatar!)! as URL)! as Data)
         // Configure the cell...
 
         return cell
@@ -80,22 +86,18 @@ class UserTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            var request =  response.getRequest(url: "https://reqres.in/api/users/" + String (users[indexPath.row].id!), method: "DELETE")
+            let request =  response.getRequest(url: "https://reqres.in/api/users/" + String (users[indexPath.row].id!), method: "DELETE")
             
             let tarefa =  URLSession.shared.dataTask(with: request){
                 (dados, resposta, erro) in
                 if(erro == nil){
-                    
                     print("User deletado com sucesso")
                 }else{
                     print("erro ao cadastrar")
-                    
                 }
                 
             }
             tarefa.resume()
-          
-          
             users.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade) 
         }
