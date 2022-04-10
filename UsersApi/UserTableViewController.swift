@@ -11,6 +11,8 @@ class UserTableViewController: UITableViewController {
 
     var users : [User] = []
     var navbar : Bool = false
+    var response = requestApi()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = navbar
@@ -74,30 +76,16 @@ class UserTableViewController: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let url = URL(string: "https://reqres.in/api/users/" + String (users[indexPath.row].id!))!
-            print(url)
-           var requisicao = URLRequest(url: url)
-            requisicao.httpMethod = "DELETE"
-            requisicao.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            var request =  response.getRequest(url: "https://reqres.in/api/users/" + String (users[indexPath.row].id!), method: "DELETE")
             
-            
-            
-            
-            let tarefa =  URLSession.shared.dataTask(with: requisicao){
+            let tarefa =  URLSession.shared.dataTask(with: request){
                 (dados, resposta, erro) in
                 if(erro == nil){
+                    
                     print("User deletado com sucesso")
                 }else{
                     print("erro ao cadastrar")
